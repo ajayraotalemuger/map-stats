@@ -1,0 +1,13 @@
+{
+  "name": "map-stats",
+  "version": "1.0.0",
+  "description": "Map stats builder",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix app\""
+  },
+  "author": "Ajay Rao T",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

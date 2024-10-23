@@ -1,0 +1,12 @@
+.settingToggleOptionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50px;
+  /* gap: 90px; */
+}
+
+.settingToggleOptionContainer p {
+  margin: 0px;
+  font-size: large;
+}

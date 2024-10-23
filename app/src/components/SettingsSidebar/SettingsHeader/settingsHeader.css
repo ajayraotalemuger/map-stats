@@ -1,0 +1,27 @@
+.settingsHeaderContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 20px 0px 20px;
+  max-height: 80px;
+  align-items: center;
+}
+
+.settingsHeaderText {
+  display: flex;
+  max-height: 45px;
+  align-items: flex-start;
+}
+
+.ui.header:last-child {
+  margin-top: 0px;
+}
+
+i.icon.settingIcon {
+  margin-top: 7px;
+}
+
+.settingsCloseBtnContainer:hover {
+    cursor: pointer;   
+}
