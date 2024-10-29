@@ -25,6 +25,7 @@ export type useStatesPolygonRenderProps = {
 export type useStatesTextRenderProps = {
   olMap: Map | undefined,
   featuresLoaded: boolean,
+  enableText: boolean,
 };
 
 export type UseMapInteractionsProps = {

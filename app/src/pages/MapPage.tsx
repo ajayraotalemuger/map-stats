@@ -23,6 +23,7 @@ const MapPage = () => {
         isStatesPolygonHighlightingEnabled,
         isBaseMapEnabled,
         isDynamicOpacityEnabled,
+        isStateNameTextEnabled,
      } = useMapSettingsStore();
 
      // show or hide base tile layer based on isBaseMapEnabled flag
@@ -41,7 +42,8 @@ const MapPage = () => {
 
     useStatesTextRender({
         olMap,
-        featuresLoaded
+        featuresLoaded,
+        enableText: isStateNameTextEnabled
     });
 
     return (

@@ -14,6 +14,8 @@ const SettingsOptions = () => {
         setIsBaseMapEnabled,
         isDynamicOpacityEnabled,
         setIsDynamicOpacityEnabled,
+        isStateNameTextEnabled,
+        setIsStateNameTextEnabled,
     } = useMapSettingsStore();
 
     return (
@@ -51,6 +53,15 @@ const SettingsOptions = () => {
                 onChange={(_e, data) => {
                     if (typeof data.checked === "boolean") {
                         setIsDynamicOpacityEnabled(data.checked)
+                    } 
+                }}
+            />
+            <SettingsToggleOption 
+                label="Enable Name Text"
+                checked={isStateNameTextEnabled}
+                onChange={(_e, data) => {
+                    if (typeof data.checked === "boolean") {
+                        setIsStateNameTextEnabled(data.checked)
                     } 
                 }}
             />

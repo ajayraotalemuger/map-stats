@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useStatesTextRenderProps } from "../types";
 import { Feature, Map } from "ol";
 import VectorLayer from "ol/layer/Vector";
@@ -25,8 +25,11 @@ const TEXT_STYLE = {
 
 const useStatesTextRender = ({
     olMap,
-    featuresLoaded
+    featuresLoaded,
+    enableText,
 }: useStatesTextRenderProps) => {
+
+    const [textLayer, setTextLayer] = useState<VectorLayer<Feature> | undefined>();
 
     useEffect(() => {
 
@@ -58,11 +61,21 @@ const useStatesTextRender = ({
                     textLayer.set("isStatesTextLayer", true);
 
                     olMap.addLayer(textLayer);
+
+                    setTextLayer(textLayer);
                 }
             }
         }
 
     }, [olMap, featuresLoaded]);
+
+    // show/hide texts on map based on enableText flag
+    useEffect(() => {
+
+        if (textLayer) {
+            textLayer.setVisible(enableText);
+        }
+    }, [enableText, textLayer]);
 
     const getStatesVectorLayer = (olMap: Map) => {
 
